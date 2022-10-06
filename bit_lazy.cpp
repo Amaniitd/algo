@@ -40,5 +40,8 @@ struct bit{
 struct lazybit{
     bit b1;
     bit b2;
-    cin 
+    lazybit(vector<int>& arr){
+        b1 = bit(arr);
+        b2 = bit(arr);
+    }
 }

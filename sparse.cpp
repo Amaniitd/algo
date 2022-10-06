@@ -1,7 +1,9 @@
 
+
 struct sparse{
     const static int M = 200002;
     const static int K = 22;
+    int lg[M] = {0};
     vector<vector<int>> t(M, vector<int>(K));
     sparse(vector<int>& arr){
         int n = arr.size();
@@ -14,4 +16,5 @@ struct sparse{
             }
         }
     }
+
 }

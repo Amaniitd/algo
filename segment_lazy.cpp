@@ -29,12 +29,10 @@ void update(ll l, ll r, ll i, ll j, ll p, ll v){
     
     if(lazy[p]!=0){
         s[p]+=(r-l+1)*lazy[p];
-        if(l==r){
-            lazy[p] = 0;
-            return;
-        }     
-        lazy[2*p+1]+=lazy[p];
-        lazy[2*p+2]+=lazy[p];
+        if(l!=r){
+            lazy[2*p+1]+=lazy[p];
+            lazy[2*p+2]+=lazy[p];
+        }
         lazy[p] = 0;
     }
 

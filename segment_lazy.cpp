@@ -25,6 +25,28 @@ void build(ll l, ll r, ll p){
 
 
 
+void update(ll l, ll r, ll i, ll j, ll p, ll v){
+    
+    if(lazy[p]!=0){
+
+    }
+
+    if(l > r || r < i || l > j) return;
+
+    if(l >= i && r <= j){
+
+    }
+
+    ll m = (l+r)/2;
+    update(l, m, i, j, 2*p+1, v);
+    update(m+1, r, i, j, 2*p+2, v);
+    s[p] = fn(s[2*p+1], s[2*p+2]);
+
+}
+
+
+
+
 ll query_lazy(ll l, ll r, ll i, ll j, ll p){
 
 }

@@ -28,7 +28,7 @@ void build(ll l, ll r, ll p){
 void update(ll l, ll r, ll i, ll j, ll p, ll v){
     
     if(lazy[p]!=0){
-
+        
     }
 
     if(l > r || r < i || l > j) return;
@@ -39,7 +39,7 @@ void update(ll l, ll r, ll i, ll j, ll p, ll v){
             lazy[2*p+1]+=v;
             lazy[2*p+2]+=v;
         }
-        
+        return;
     }
 
     ll m = (l+r)/2;

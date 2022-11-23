@@ -23,3 +23,8 @@ void build(ll l, ll r, ll p){
     s[p] = fn(s[2*p+1], s[2*p+2]);
 }
 
+
+
+ll query_lazy(ll l, ll r, ll i, ll j, ll p){
+
+}

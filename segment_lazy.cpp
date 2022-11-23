@@ -8,9 +8,6 @@ ll s[4*N];
 ll lazy[4*N];  
 
 
-ll fn(ll a, ll b){
-    return a+b;
-}
 
 void build(ll l, ll r, ll p){
     if(l==r){
@@ -20,7 +17,7 @@ void build(ll l, ll r, ll p){
     ll m = (l+r)/2;
     build(l, m, 2*p+1);
     build(m+1, r, 2*p+2);
-    s[p] = fn(s[2*p+1], s[2*p+2]);
+    s[p] = s[2*p+1] + s[2*p+2];
 }
 
 
@@ -50,7 +47,7 @@ void update_lazy(ll l, ll r, ll i, ll j, ll p, ll v){
     ll m = (l+r)/2;
     update(l, m, i, j, 2*p+1, v);
     update(m+1, r, i, j, 2*p+2, v);
-    s[p] = fn(s[2*p+1], s[2*p+2]);
+    s[p] = s[2*p+1] + s[2*p+2];
 
 }
 

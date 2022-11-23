@@ -66,5 +66,6 @@ ll query_lazy(ll l, ll r, ll i, ll j, ll p){
         }
         lazy[p] = 0;
     }
-    
+    if(l > r || r < i || l > j) return;
+
 }

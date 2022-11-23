@@ -58,5 +58,13 @@ void update_lazy(ll l, ll r, ll i, ll j, ll p, ll v){
 
 
 ll query_lazy(ll l, ll r, ll i, ll j, ll p){
+    if(lazy[p]!=0){
+        s[p]+=(r-l+1)*lazy[p];
+        if(l!=r){
+            lazy[2*p+1]+=lazy[p];
+            lazy[2*p+2]+=lazy[p];
+        }
+        lazy[p] = 0;
+    }
     
 }

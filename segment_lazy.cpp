@@ -34,7 +34,11 @@ void update(ll l, ll r, ll i, ll j, ll p, ll v){
     if(l > r || r < i || l > j) return;
 
     if(l >= i && r <= j){
-
+        s[p]+=(r-l+1)*v;
+        if(l!=r){
+            lazy[2*p+1]+=v;
+            lazy[2*p+2]+=v;
+        }
     }
 
     ll m = (l+r)/2;

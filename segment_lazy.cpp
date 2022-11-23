@@ -34,7 +34,8 @@ void update(ll l, ll r, ll i, ll j, ll p, ll v){
             return;
         }     
         lazy[2*p+1]+=lazy[p];
-        lazy[2*p+1]+=lazy[p];
+        lazy[2*p+2]+=lazy[p];
+        lazy[p] = 0;
     }
 
     if(l > r || r < i || l > j) return;

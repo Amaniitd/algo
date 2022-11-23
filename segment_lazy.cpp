@@ -1,4 +1,4 @@
 
+#define ll long long
 
-
-void build()
+void build(ll node)

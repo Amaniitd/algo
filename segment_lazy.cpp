@@ -8,6 +8,10 @@ ll s[4*N];
 ll lazy[4*N];  
 
 
+ll fn(ll a, ll b){
+    return a+b;
+}
+
 void build(ll l, ll r, ll p){
     if(l==r){
         s[p] = a[l];
@@ -15,5 +19,7 @@ void build(ll l, ll r, ll p){
     }
     ll m = (l+r)/2;
     build(l, m, 2*p+1);
-    build()
+    build(m+1, r, 2*p+2);
+    s[p] = fn(s[2*p+1], s[2*p+2]);
 }
+

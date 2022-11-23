@@ -22,7 +22,7 @@ void build(ll l, ll r, ll p){
 
 
 
-void update_lazy(ll l, ll r, ll i, ll j, ll p, ll v){
+void update(ll l, ll r, ll i, ll j, ll p, ll v){
     
     if(lazy[p]!=0){
         s[p]+=(r-l+1)*lazy[p];
@@ -54,7 +54,7 @@ void update_lazy(ll l, ll r, ll i, ll j, ll p, ll v){
 
 
 
-ll query_lazy(ll l, ll r, ll i, ll j, ll p){
+ll query(ll l, ll r, ll i, ll j, ll p){
     if(lazy[p]!=0){
         s[p]+=(r-l+1)*lazy[p];
         if(l!=r){
@@ -64,5 +64,8 @@ ll query_lazy(ll l, ll r, ll i, ll j, ll p){
         lazy[p] = 0;
     }
     if(l > r || r < i || l > j) return;
-
+    if(l >= i && r <= j) return s[p];
+    ll m = (l+r)/2;
+    return query(l, m, i, j, 2*p+1) + query(m+1, r, i, j, 2*p+2);
 }
+

@@ -9,7 +9,7 @@ ll lazy[4*N];
 
 
 
-void build(ll l, ll r, ll p){
+void build(ll l, ll r, ll p){   //l = 0; r = n-1; p = 0;
     if(l==r){
         s[p] = a[l];
         return;
@@ -22,7 +22,7 @@ void build(ll l, ll r, ll p){
 
 
 
-void update(ll l, ll r, ll i, ll j, ll p, ll v){
+void update(ll l, ll r, ll i, ll j, ll p, ll v){   //[i, j]
     
     if(lazy[p]!=0){
         s[p]+=(r-l+1)*lazy[p];
@@ -54,7 +54,7 @@ void update(ll l, ll r, ll i, ll j, ll p, ll v){
 
 
 
-ll query(ll l, ll r, ll i, ll j, ll p){
+ll query(ll l, ll r, ll i, ll j, ll p){   //[i, j]
     if(lazy[p]!=0){
         s[p]+=(r-l+1)*lazy[p];
         if(l!=r){

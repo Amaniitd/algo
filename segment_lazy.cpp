@@ -63,7 +63,7 @@ ll query(ll l, ll r, ll i, ll j, ll p){   //[i, j]
         }
         lazy[p] = 0;
     }
-    if(l > r || r < i || l > j) return;
+    if(l > r || r < i || l > j) return 0;
     if(l >= i && r <= j) return s[p];
     ll m = (l+r)/2;
     return query(l, m, i, j, 2*p+1) + query(m+1, r, i, j, 2*p+2);
